@@ -4,5 +4,36 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/HeightMap.unity
+    guid: 2e8c00493c5974c459b218d6b123293a
+  - enabled: 1
+    path: Assets/Scenes/VertexPaint.unity
+    guid: a33fd3c4e8259114fb7d7b6cf7aa7622
+  - enabled: 1
+    path: Assets/Scenes/ParallaxOcclusionMaping.unity
+    guid: 80ae61105b8fc4143ac9629a5186de78
+  - enabled: 1
+    path: Assets/Scenes/FresnelEffect.unity
+    guid: 6991eb97ba4fac74a9fb6b42237578d9
+  - enabled: 1
+    path: Assets/Scenes/ScreenWorldSpaceUV.unity
+    guid: b2e84b2b88f3e30429997fc42e979d56
+  - enabled: 1
+    path: Assets/Scenes/ToonShading.unity
+    guid: cf85feb29dac6174c99087abf0b2316f
+  - enabled: 1
+    path: Assets/Scenes/DepthFade.unity
+    guid: a28a13b8f67fdb049b8536d1f30c323a
+  - enabled: 1
+    path: Assets/Scenes/DepthFade2.unity
+    guid: 9cf10add7d685cf4f93940a2163af714
+  - enabled: 1
+    path: Assets/Scenes/Shade.unity
+    guid: ceba2f80c65241f489330e5ad366891e
   m_configObjects: {}
+  m_UseUCBPForAssetBundles: 0
