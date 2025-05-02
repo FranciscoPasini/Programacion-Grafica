@@ -37,8 +37,8 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _RefPlane: 0
-    - _Scale: 0.01
+    - _RefPlane: 1
+    - _Scale: 0.15908596
     - __dirty: 0
     m_Colors:
     - _Color0: {r: 0.49803925, g: 0.49803925, b: 0.49803925, a: 0}
