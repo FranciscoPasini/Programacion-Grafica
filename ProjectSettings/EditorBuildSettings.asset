@@ -12,13 +12,13 @@ EditorBuildSettings:
     path: Assets/Scenes/HeightMap.unity
     guid: 2e8c00493c5974c459b218d6b123293a
   - enabled: 1
-    path: Assets/Scenes/VertexPaint.unity
+    path: Assets/Scenes/VertexPaint/VertexPaint.unity
     guid: a33fd3c4e8259114fb7d7b6cf7aa7622
   - enabled: 1
     path: Assets/Scenes/ParallaxOclussionMapping/ParallaxOcclusionMaping.unity
     guid: 80ae61105b8fc4143ac9629a5186de78
   - enabled: 1
-    path: Assets/Scenes/FresnelEffect.unity
+    path: Assets/Scenes/FresnelEffect/FresnelEffect.unity
     guid: 6991eb97ba4fac74a9fb6b42237578d9
   - enabled: 1
     path: Assets/Scenes/ScreenWorldSpaceUV.unity
