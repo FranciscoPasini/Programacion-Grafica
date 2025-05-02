@@ -5,6 +5,7 @@ ShaderImporter:
   defaultTextures:
   - _Texture_Grass: {fileID: 2800000, guid: c23c449aa46be9445be5a3d429dec22c, type: 3}
   - _Texture_Dirt: {fileID: 2800000, guid: 30d6174462a3a1d41a1e365614b62f3d, type: 3}
+  - _TextureSample0: {fileID: 2800000, guid: b30d0fec18079724991e1bea3c18ff1a, type: 3}
   nonModifiableTextures: []
   userData: 
   assetBundleName: 
