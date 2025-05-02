@@ -70,6 +70,6 @@ public class LevelManager : MonoBehaviour
 
     public void ToonWater()
     {
-        SceneManager.LoadScene("Laguna");
+        SceneManager.LoadScene("ToonWater");
     }
 }
