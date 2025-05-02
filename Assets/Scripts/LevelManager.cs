@@ -16,6 +16,7 @@ public class LevelManager : MonoBehaviour
     public GameObject depthFade2;
     public GameObject shade;
     public GameObject shader10;
+    public GameObject toonWater;
 
     public void HeightMap()
     {
@@ -65,5 +66,10 @@ public class LevelManager : MonoBehaviour
     public void Shader10()
     {
         SceneManager.LoadScene("Shade10");
+    }
+
+    public void ToonWater()
+    {
+        SceneManager.LoadScene("Laguna");
     }
 }

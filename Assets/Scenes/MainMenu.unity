@@ -1482,6 +1482,7 @@ MonoBehaviour:
   depthFade2: {fileID: 371743189}
   shade: {fileID: 632563815}
   shader10: {fileID: 0}
+  toonWater: {fileID: 1022801961}
 --- !u!114 &690034000
 MonoBehaviour:
   m_ObjectHideFlags: 0

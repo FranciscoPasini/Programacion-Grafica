@@ -38,9 +38,9 @@ Material:
     m_Ints: []
     m_Floats:
     - _Bias1: 0.402
-    - _DistortionWeight: 0.205
-    - _Float0: 0
-    - _Float1: 0.01
+    - _DistortionWeight: 0.676
+    - _Float0: 0.2
+    - _Float1: 0
     - _Scale1: 1
     - _TextureTiling: 3
     m_Colors: []
