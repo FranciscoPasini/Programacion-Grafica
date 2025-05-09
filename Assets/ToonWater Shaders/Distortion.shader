@@ -9,47 +9,18 @@ Shader "Distortion"
 
 	SubShader
 	{
-		Tags{ "RenderType" = "Opaque"  "Queue" = "Geometry+0" "IsEmissive" = "true"  }
+		Tags{ "RenderType" = "Opaque"  "Queue" = "Geometry+0" }
 		Cull Back
-		GrabPass{ }
 		CGPROGRAM
 		#pragma target 3.0
-		#if defined(UNITY_STEREO_INSTANCING_ENABLED) || defined(UNITY_STEREO_MULTIVIEW_ENABLED)
-		#define ASE_DECLARE_SCREENSPACE_TEXTURE(tex) UNITY_DECLARE_SCREENSPACE_TEXTURE(tex);
-		#else
-		#define ASE_DECLARE_SCREENSPACE_TEXTURE(tex) UNITY_DECLARE_SCREENSPACE_TEXTURE(tex)
-		#endif
 		#pragma surface surf Standard keepalpha addshadow fullforwardshadows 
 		struct Input
 		{
-			float4 screenPos;
+			half filler;
 		};
-
-		ASE_DECLARE_SCREENSPACE_TEXTURE( _GrabTexture )
-
-
-		inline float4 ASE_ComputeGrabScreenPos( float4 pos )
-		{
-			#if UNITY_UV_STARTS_AT_TOP
-			float scale = -1.0;
-			#else
-			float scale = 1.0;
-			#endif
-			float4 o = pos;
-			o.y = pos.w * 0.5f;
-			o.y = ( pos.y - o.y ) * _ProjectionParams.x * scale + o.y;
-			return o;
-		}
-
 
 		void surf( Input i , inout SurfaceOutputStandard o )
 		{
-			float4 ase_screenPos = float4( i.screenPos.xyz , i.screenPos.w + 0.00000000001 );
-			float4 ase_grabScreenPos = ASE_ComputeGrabScreenPos( ase_screenPos );
-			float4 ase_grabScreenPosNorm = ase_grabScreenPos / ase_grabScreenPos.w;
-			float2 appendResult2 = (float2(ase_grabScreenPosNorm.r , ase_grabScreenPosNorm.g));
-			float4 screenColor4 = UNITY_SAMPLE_SCREENSPACE_TEXTURE(_GrabTexture,( appendResult2 + float2( 0,0 ) ));
-			o.Emission = screenColor4.rgb;
 			o.Alpha = 1;
 		}
 
@@ -60,7 +31,7 @@ Shader "Distortion"
 }
 /*ASEBEGIN
 Version=18900
-8;31;1350;668;1343.123;294.6454;1.445409;True;False
+7.2;30.4;1521.6;757.4;1467.139;359.2552;1.445409;True;True
 Node;AmplifyShaderEditor.GrabScreenPosition;1;-788.0868,49.362;Inherit;False;0;0;5;FLOAT4;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
 Node;AmplifyShaderEditor.DynamicAppendNode;2;-540.9215,79.7156;Inherit;False;FLOAT2;4;0;FLOAT;0;False;1;FLOAT;0;False;2;FLOAT;0;False;3;FLOAT;0;False;1;FLOAT2;0
 Node;AmplifyShaderEditor.SimpleAddOpNode;3;-354.4635,81.16103;Inherit;False;2;2;0;FLOAT2;0,0;False;1;FLOAT2;0,0;False;1;FLOAT2;0
@@ -71,6 +42,5 @@ WireConnection;2;0;1;1
 WireConnection;2;1;1;2
 WireConnection;3;0;2;0
 WireConnection;4;0;3;0
-WireConnection;0;2;4;0
 ASEEND*/
-//CHKSM=6B04D3BF9FB3FAA7E9C65C2B7A6E69BEB9DD5D8B
+//CHKSM=9B589B4B38A0FBED8A77B50B22A120EE79719B91
