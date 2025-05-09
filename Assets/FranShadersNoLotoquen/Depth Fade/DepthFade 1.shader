@@ -4,9 +4,9 @@ Shader "DepthFade 1"
 {
 	Properties
 	{
-		_Bias3("Bias", Range( 0 , 1)) = 0.4
-		_Scale3("Scale", Range( 0 , 1)) = 1
-		_Float3("Float 0", Range( 0 , 2)) = 0.9070593
+		_Bias3("Bias", Range( 0 , 1)) = 1
+		_Scale3("Scale", Range( 0 , 1)) = 0
+		_Power("Power", Range( 0 , 2)) = 0.9070593
 
 	}
 	
@@ -73,7 +73,7 @@ Shader "DepthFade 1"
 			uniform float4 _CameraDepthTexture_TexelSize;
 			uniform float _Bias3;
 			uniform float _Scale3;
-			uniform float _Float3;
+			uniform float _Power;
 					float2 voronoihash7( float2 p )
 					{
 						
@@ -163,7 +163,7 @@ Shader "DepthFade 1"
 				float distanceDepth3 = abs( ( screenDepth3 - LinearEyeDepth( ase_screenPosNorm.z ) ) / ( 1.0 ) );
 				
 				
-				finalColor = saturate( ( ( color9 + voroi7 ) + ( 1.0 - pow( ( ( distanceDepth3 + _Bias3 ) * _Scale3 ) , _Float3 ) ) ) );
+				finalColor = saturate( ( ( color9 + voroi7 ) + ( 1.0 - pow( ( ( distanceDepth3 + _Bias3 ) * _Scale3 ) , _Power ) ) ) );
 				return finalColor;
 			}
 			ENDCG
@@ -175,39 +175,44 @@ Shader "DepthFade 1"
 }
 /*ASEBEGIN
 Version=18900
-331;73;1119;669;1000.311;569.483;1.350496;True;True
-Node;AmplifyShaderEditor.CommentaryNode;16;-894.4963,83.38486;Inherit;False;1013.157;464.341;Reflejo del objeto con el agua y la profundidad;8;2;3;4;5;10;11;12;13;;1,1,1,1;0;0
+331;73;1119;669;437.5263;59.94571;1;True;True
+Node;AmplifyShaderEditor.CommentaryNode;23;-1319.089,119.6842;Inherit;False;640.5903;279.16;Mide la distancia entre la superficie del objeto y la geometría más cercana;3;24;4;3;;1,1,1,1;0;0
+Node;AmplifyShaderEditor.CommentaryNode;21;-1171.389,85.40723;Inherit;False;1263.63;468.0518;Reflejo del objeto con el agua y la profundidad;3;12;11;25;;1,1,1,1;0;0
+Node;AmplifyShaderEditor.CommentaryNode;24;-1184.389,248.6842;Inherit;False;350.44;165.16;Desplazar o ajustar el inicio del desvanecimiento.;1;2;;1,1,1,1;0;0
+Node;AmplifyShaderEditor.RangedFloatNode;2;-1134.389,298.6842;Inherit;False;Property;_Bias3;Bias;0;0;Create;True;0;0;0;False;0;False;1;0;0;1;0;1;FLOAT;0
+Node;AmplifyShaderEditor.CommentaryNode;25;-674.2183,121.4072;Inherit;False;416.4572;351.1604;Controla la intensidad del desvanecimiento;2;5;10;;1,1,1,1;0;0
 Node;AmplifyShaderEditor.CommentaryNode;19;-693.0894,-393.7284;Inherit;False;727.3041;443.7208;Textura de Agua;4;9;8;17;18;;0,0.4588236,0.6509804,1;0;0
-Node;AmplifyShaderEditor.RangedFloatNode;2;-844.4963,247.385;Inherit;False;Property;_Bias3;Bias;0;0;Create;True;0;0;0;False;0;False;0.4;0;0;1;0;1;FLOAT;0
-Node;AmplifyShaderEditor.DepthFade;3;-833.4963,134.385;Inherit;False;True;False;True;2;1;FLOAT3;0,0,0;False;0;FLOAT;1;False;1;FLOAT;0
-Node;AmplifyShaderEditor.SimpleAddOpNode;4;-546.4959,133.385;Inherit;False;2;2;0;FLOAT;0;False;1;FLOAT;0;False;1;FLOAT;0
-Node;AmplifyShaderEditor.RangedFloatNode;5;-730.4959,341.3853;Inherit;False;Property;_Scale3;Scale;1;0;Create;True;0;0;0;False;0;False;1;0;0;1;0;1;FLOAT;0
+Node;AmplifyShaderEditor.DepthFade;3;-1260.089,152.6842;Inherit;False;True;False;True;2;1;FLOAT3;0,0,0;False;0;FLOAT;1;False;1;FLOAT;0
+Node;AmplifyShaderEditor.SimpleAddOpNode;4;-821.0886,159.6842;Inherit;False;2;2;0;FLOAT;0;False;1;FLOAT;0;False;1;FLOAT;0
 Node;AmplifyShaderEditor.CommentaryNode;18;-643.0894,-157.2344;Inherit;False;248.29;160.16;Velocidad del efecto blanco;1;6;;1,1,1,1;0;0
+Node;AmplifyShaderEditor.RangedFloatNode;5;-624.2183,357.4077;Inherit;False;Property;_Scale3;Scale;1;0;Create;True;0;0;0;False;0;False;0;0;0;1;0;1;FLOAT;0
+Node;AmplifyShaderEditor.SimpleMultiplyOpNode;10;-425.3011,171.4072;Inherit;False;2;2;0;FLOAT;0;False;1;FLOAT;0;False;1;FLOAT;0
 Node;AmplifyShaderEditor.CommentaryNode;17;-388.1729,-156.4876;Inherit;False;249.95;206.48;Efecto blanco del agua;1;7;;1,1,1,1;0;0
 Node;AmplifyShaderEditor.SimpleTimeNode;6;-593.0894,-107.2344;Inherit;False;1;0;FLOAT;3;False;1;FLOAT;0
-Node;AmplifyShaderEditor.RangedFloatNode;11;-543.0369,432.5659;Inherit;False;Property;_Float3;Float 0;2;0;Create;True;0;0;0;False;0;False;0.9070593;0;0;2;0;1;FLOAT;0
-Node;AmplifyShaderEditor.SimpleMultiplyOpNode;10;-393.4969,133.3849;Inherit;False;2;2;0;FLOAT;0;False;1;FLOAT;0;False;1;FLOAT;0
-Node;AmplifyShaderEditor.PowerNode;12;-231.4967,133.3849;Inherit;False;False;2;0;FLOAT;0;False;1;FLOAT;1;False;1;FLOAT;0
+Node;AmplifyShaderEditor.RangedFloatNode;11;-201.9726,441.6213;Inherit;False;Property;_Power;Power;2;0;Create;True;0;0;0;False;0;False;0.9070593;0;0;2;0;1;FLOAT;0
 Node;AmplifyShaderEditor.ColorNode;9;-378.2946,-343.7284;Inherit;False;Constant;_Color2;Color 1;0;0;Create;True;0;0;0;False;0;False;0,0.458181,0.6509434,0;0,0,0,0;True;0;5;COLOR;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
 Node;AmplifyShaderEditor.VoronoiNode;7;-338.1729,-106.4876;Inherit;False;0;0;1;0;1;False;1;False;False;4;0;FLOAT2;0,0;False;1;FLOAT;0;False;2;FLOAT;10;False;3;FLOAT;0;False;3;FLOAT;0;FLOAT2;1;FLOAT2;2
-Node;AmplifyShaderEditor.OneMinusNode;13;-66.86923,137.9156;Inherit;False;1;0;FLOAT;0;False;1;FLOAT;0
+Node;AmplifyShaderEditor.PowerNode;12;-190.2204,206.4296;Inherit;False;False;2;0;FLOAT;0;False;1;FLOAT;1;False;1;FLOAT;0
+Node;AmplifyShaderEditor.CommentaryNode;27;89.4826,160.3387;Inherit;False;235.53;160.16;Efecto Fade in / Fade out;1;13;;1,1,1,1;0;0
 Node;AmplifyShaderEditor.SimpleAddOpNode;8;-118.3753,-143.12;Inherit;False;2;2;0;COLOR;0,0,0,0;False;1;FLOAT;0;False;1;COLOR;0
+Node;AmplifyShaderEditor.OneMinusNode;13;139.4826,210.3387;Inherit;False;1;0;FLOAT;0;False;1;FLOAT;0
 Node;AmplifyShaderEditor.SimpleAddOpNode;14;186.2865,30.51545;Inherit;False;2;2;0;COLOR;0,0,0,0;False;1;FLOAT;0;False;1;COLOR;0
 Node;AmplifyShaderEditor.SaturateNode;15;307.5317,24.003;Inherit;False;1;0;COLOR;0,0,0,0;False;1;COLOR;0
 Node;AmplifyShaderEditor.TemplateMultiPassMasterNode;0;455.1364,13.792;Float;False;True;-1;2;ASEMaterialInspector;100;1;DepthFade 1;0770190933193b94aaa3065e307002fa;True;Unlit;0;0;Unlit;2;False;True;0;1;False;-1;0;False;-1;0;1;False;-1;0;False;-1;True;0;False;-1;0;False;-1;False;False;False;False;False;False;False;False;False;True;0;False;-1;False;True;0;False;-1;False;True;True;True;True;True;0;False;-1;False;False;False;False;False;False;False;True;False;255;False;-1;255;False;-1;255;False;-1;7;False;-1;1;False;-1;1;False;-1;1;False;-1;7;False;-1;1;False;-1;1;False;-1;1;False;-1;False;True;1;False;-1;True;3;False;-1;True;True;0;False;-1;0;False;-1;True;1;RenderType=Opaque=RenderType;True;2;0;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;True;1;LightMode=ForwardBase;False;0;;0;0;Standard;1;Vertex Position,InvertActionOnDeselection;1;0;1;True;False;;False;0
+Node;AmplifyShaderEditor.CommentaryNode;26;-254.9726,118.4296;Inherit;False;350.44;469.3517;Hace el desvanecimiento suave y progresivo.;0;;1,1,1,1;0;0
 WireConnection;4;0;3;0
 WireConnection;4;1;2;0
 WireConnection;10;0;4;0
 WireConnection;10;1;5;0
+WireConnection;7;1;6;0
 WireConnection;12;0;10;0
 WireConnection;12;1;11;0
-WireConnection;7;1;6;0
-WireConnection;13;0;12;0
 WireConnection;8;0;9;0
 WireConnection;8;1;7;0
+WireConnection;13;0;12;0
 WireConnection;14;0;8;0
 WireConnection;14;1;13;0
 WireConnection;15;0;14;0
 WireConnection;0;0;15;0
 ASEEND*/
-//CHKSM=1893E621EF0671F98BDC93EAB6F1A22E96A577D6
+//CHKSM=436065AC0BC0536D2FBE44C09F6D986526EE5F3B
