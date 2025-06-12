@@ -6,37 +6,37 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/MainMenu.unity
+    path: Assets/Scenes/Parcial01/MainMenu.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
-    path: Assets/Scenes/HeightMap.unity
+    path: Assets/Scenes/Parcial01/HeightMap.unity
     guid: 2e8c00493c5974c459b218d6b123293a
   - enabled: 1
-    path: Assets/Scenes/VertexPaint/VertexPaint.unity
+    path: Assets/Scenes/Parcial01/VertexPaint/VertexPaint.unity
     guid: a33fd3c4e8259114fb7d7b6cf7aa7622
   - enabled: 1
-    path: Assets/Scenes/FresnelEffect/FresnelEffect.unity
+    path: Assets/Scenes/Parcial01/FresnelEffect/FresnelEffect.unity
     guid: 6991eb97ba4fac74a9fb6b42237578d9
   - enabled: 1
-    path: Assets/Scenes/ParallaxOclussionMapping/ParallaxOcclusionMaping.unity
+    path: Assets/Scenes/Parcial01/ParallaxOclussionMapping/ParallaxOcclusionMaping.unity
     guid: 80ae61105b8fc4143ac9629a5186de78
   - enabled: 1
-    path: Assets/Scenes/ScreenWorldSpaceUV.unity
+    path: Assets/Scenes/Parcial01/ScreenWorldSpaceUV.unity
     guid: b2e84b2b88f3e30429997fc42e979d56
   - enabled: 1
-    path: Assets/Scenes/ToonShading.unity
+    path: Assets/Scenes/Parcial01/ToonShading.unity
     guid: cf85feb29dac6174c99087abf0b2316f
   - enabled: 1
-    path: Assets/Scenes/DepthFade.unity
+    path: Assets/Scenes/Parcial01/DepthFade.unity
     guid: a28a13b8f67fdb049b8536d1f30c323a
   - enabled: 0
     path: Assets/Scenes/DepthFade2.unity
     guid: 9cf10add7d685cf4f93940a2163af714
   - enabled: 1
-    path: Assets/Scenes/ToonWater.unity
+    path: Assets/Scenes/Parcial01/ToonWater.unity
     guid: 2edc9efb3611c5544b354192b2086c88
   - enabled: 1
-    path: Assets/Scenes/DissolveShader/Shade.unity
+    path: Assets/Scenes/Parcial01/DissolveShader/Shade.unity
     guid: ceba2f80c65241f489330e5ad366891e
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
