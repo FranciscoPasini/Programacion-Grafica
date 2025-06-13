@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: GreyScaleMat
-  m_Shader: {fileID: 4800000, guid: 0adc988f437acc14aa437ecfe6abe490, type: 3}
+  m_Name: GreyScaleMat2
+  m_Shader: {fileID: 4800000, guid: 04987685b7f59fc47a1ba6541d9f5b06, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -68,8 +68,8 @@ Material:
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
-    - _GrayScale: 0
     - _GrayscaleAmount: 0
+    - _GreyScaleSlider1: 0
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
