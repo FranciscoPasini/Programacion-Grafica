@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(Camera))]
 public class BloomScript : MonoBehaviour
@@ -8,10 +9,8 @@ public class BloomScript : MonoBehaviour
     public Shader postProcessShader;
 
     [SerializeField] private Material postProcessMaterial;
+    [SerializeField] private Slider intensitySlider;
 
-    [Range(0.0f, 5.0f)]
-
-    public float bloomIntensity = 1.0f;
 
     void Awake()
     {
@@ -22,7 +21,7 @@ public class BloomScript : MonoBehaviour
     {
         if (postProcessMaterial != null)
         {
-            postProcessMaterial.SetFloat("_BloomIntensity", bloomIntensity);
+            postProcessMaterial.SetFloat("_BloomIntensity", intensitySlider.value);
 
             Graphics.Blit(source, destination, postProcessMaterial);
         }
